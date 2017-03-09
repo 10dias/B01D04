@@ -18,7 +18,11 @@ https.get(API, function(res) {
     });
 
     res.on('end', function() {
-        console.log(finalRes);
+        finalRes = JSON.parse(finalRes);
+        const beers = finalRes.map(function(beer) {
+            return {name: beer.name};
+        });
+        console.log(beers);
     });
 });
 
