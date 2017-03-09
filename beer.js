@@ -22,7 +22,10 @@ https.get(API, function(res) {
         const beers = finalRes.map(function(beer) {
             return {name: beer.name};
         });
-        console.log(beers);
+        console.log('Cervejas em estoque: ' + beers.length);
+        beers.forEach(function(beer) {
+            console.log(beer.name);
+        });
     });
 });
 
